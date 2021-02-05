@@ -1,0 +1,16 @@
+.addTaskButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: 130px;
+  background-color: lighten(#499e0b, 10%);
+  padding: 0 15px;
+  height: 40px;
+  cursor: pointer;
+  text-transform: capitalize;
+  border: 2px solid darken(#499e0b, 10%);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}

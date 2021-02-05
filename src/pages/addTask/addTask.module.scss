@@ -1,0 +1,79 @@
+.addTask {
+  padding: 20px 30px;
+  border: 1px solid #333;
+  border-radius: 5px;
+
+  &_input {
+    display: block;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 15px;
+    border: 1px solid rgba(#333, 0.5);
+    border-radius: 3px;
+    color: lighten(#333, 10%);
+
+    &:focus::placeholder {
+      opacity: 0;
+      transform: translateY(-200%);
+    }
+    &::placeholder {
+      color: lighten(#333, 10%);
+      transition: 0.2s linear;
+    }
+    &_wrapper {
+      display: block;
+
+      &:not(:first-of-type) {
+        margin-top: 30px;
+      }
+    }
+    &_title {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  &_textarea {
+    display: block;
+    height: 150px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px 15px;
+    border: 1px solid rgba(#333, 0.5);
+    border-radius: 3px;
+    color: lighten(#333, 10%);
+    resize: vertical;
+
+    &:focus::placeholder {
+      opacity: 0;
+      transform: translateY(-200%);
+    }
+    &::placeholder {
+      color: lighten(#333, 10%);
+      transition: 0.2s linear;
+    }
+  }
+  &_submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    width: 130px;
+    background-color: lighten(#499e0b, 10%);
+    padding: 0 15px;
+    height: 40px;
+    cursor: pointer;
+    text-transform: capitalize;
+    border: 2px solid darken(#499e0b, 10%);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+  &_error {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(red, 0.6);
+  }
+}

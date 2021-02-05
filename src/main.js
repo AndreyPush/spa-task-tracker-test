@@ -1,8 +1,26 @@
 import Vue from 'vue'
-import App from './App.vue'
+import {router} from './router'
+import RootComponent from './RootComponent'
+import axios from "axios";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+Vue.component('root-component', RootComponent);
+
+Vue.prototype.axios = axios;
+Vue.prototype.baseURL = 'http://localhost:3000';
+
+
+router.beforeEach((to, from, next) => {
+  if(to.name==='card'&&(isNaN(to.params.id))) router.push('/error')
+  document.title = to.meta.title(to)
+  next()
+});
+
+const app = new Vue({
+  el: '#app',
+  router,
+  created() {
+    window.app = this
+  }
+});

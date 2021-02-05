@@ -1,0 +1,88 @@
+.task {
+  padding: 20px 30px;
+  border: 1px solid #333;
+  border-radius: 5px;
+
+  &_title {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+
+    &_content {
+      font-style: italic;
+      margin-left: 5px;
+    }
+  }
+  &_description {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+
+    &_content {
+      font-style: italic;
+      margin-left: 5px;
+    }
+  }
+  &_date {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    font-style: italic;
+    color: lighten(#000, 40%)
+  }
+  &_status {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: auto;
+    width: auto;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-top: 2px;
+      right: 10px;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      border: {
+        top: 5px solid lighten(#000, 20%);
+        right: 5px solid transparent;
+        bottom: 5px solid transparent;
+        left: 5px solid transparent;
+      }
+    }
+    &_title {
+      font-size: 14px;
+    }
+    &_select {
+      display: block;
+      width: 150px;
+      height: 30px;
+      font-weight: 500;
+      padding: 0 15px;
+      color: lighten(#000, 20%);
+      background-color: transparent;
+      margin-left: 10px;
+
+      option {
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+  &_delete {
+    display: block;
+    margin-top: 15px;
+    padding: 0 15px;
+    height: 40px;
+    cursor: pointer;
+    text-transform: capitalize;
+    background-color: rgba(red, 40%);
+    border: 2px solid darken(red, 10%);
+    border-radius: 4px;
+  }
+}
